@@ -57,14 +57,7 @@ router.get('/filter/get', async (req, res) => {
 
 router.post("/addMenuItem", async (req, res) => {
     console.log(req.body)
-    /*const { success } = menuBody.safeParse(req.body) //Zod validation where {success} is objectuseed to destructure object(i.e. it will old the value of the object)
-    console.log(success)
-    if (!success) {
-        return res.status(411).json({
-            message: "Incorrect inputs"
-        })
-    }*/
-
+ 
     const existingItem = await Menu.findOne({
         cuisine: req.body.cuisine,
         dish: req.body.dish
